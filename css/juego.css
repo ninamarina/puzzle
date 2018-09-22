@@ -1,0 +1,135 @@
+/*Código armado por La Foca Loca S.A. No modificar*/
+:root {
+  --main-color: #E84A5F;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  background-image: url(../images/adventure.jpg);
+}
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+li {
+  padding: 5px 0;
+}
+li::before {
+  content: "• ";
+  color: var(--main-color);
+}
+
+#titulo {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-shadow: 8px 8px 0px var(--main-color);
+}
+
+.col-40 h1 {
+  font-size: 20px;
+  color: var(--main-color);
+}
+
+.col-40 {
+  background: #FFF;
+  padding: 30px;
+  color: #000;
+  width: 30%;
+  display: table-cell;
+  margin: 0;
+  vertical-align: top;
+  height: 100%;
+}
+
+.col-60 {
+  width: 60%;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+#flecha{
+  font-size: 60px;
+}
+
+.texto-centrado {
+  text-align: center;
+}
+
+#juego div {
+  text-align: center;
+}
+
+#juego {
+  background: var(--main-color);
+  height: 600px;
+  width: 600px;
+  margin: auto;
+}
+
+.pieza {
+  width: 200px;
+  height: 200px;
+  float: left;
+  border: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+
+.pieza.arriba {
+  animation: deslizarArriba 0.3s ease-in-out;
+}
+
+.pieza.abajo {
+  animation: deslizarAbajo 0.3s ease-in-out;
+}
+
+.pieza.derecha {
+  animation: deslizarDerecha 0.3s ease-in-out;
+}
+
+.pieza.izquierda {
+  animation: deslizarIzquierda 0.3s ease-in-out;
+}
+
+.pieza img {
+  width: 100%;
+}
+
+#objetivo img {
+  width: 70%;
+}
+
+@keyframes deslizarArriba {
+  from { transform: translateY(200px); }
+  to   { transform: none; }
+}
+
+@keyframes deslizarAbajo {
+  from { transform: translateY(-200px); }
+  to   { transform: none; }
+}
+
+@keyframes deslizarDerecha {
+  from { transform: translateX(-200px); }
+  to   { transform: none; }
+}
+
+@keyframes deslizarIzquierda {
+  from { transform: translateX(200px); }
+  to   { transform: none; }
+}
+
+@media screen and (max-width: 1024px) {
+  .col-40 {
+    display: none;
+  }
+  .col-60 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
